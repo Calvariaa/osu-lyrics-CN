@@ -24,7 +24,7 @@ namespace osu_Lyrics.Lyrics
                 LyricChanged?.Invoke(null, null);
             }
         }
-        private string status = "请选择";
+        private string status = "等待选择歌曲";
 
         private static double Now => new TimeSpan(DateTime.Now.Ticks).TotalSeconds;
 
@@ -97,7 +97,7 @@ namespace osu_Lyrics.Lyrics
 
         private void Osu_MessageReceived(object sender, MessageReceivedEventArgs e)
         {
-            // 재생 중인 곡이 바꼈다!
+            // 播放的歌曲变了！
             if (e.AudioPath != AudioPath)
             {
                 AudioPath = e.AudioPath;
@@ -126,7 +126,7 @@ namespace osu_Lyrics.Lyrics
             }
 
             cts = new CancellationTokenSource();
-            status = "가사 받는 중...";
+            status = "正在接收歌词…";
             Lyric.Clear();
             AudioChanged?.BeginInvoke(null, null, null, null);
             Task.Run(async () =>
@@ -157,7 +157,7 @@ namespace osu_Lyrics.Lyrics
                 }
                 else if (result.IsFaulted)
                 {
-                    status = "没有歌词";
+                    status = "没有找到歌词";
                     lyric.Clear();
                 }
             });

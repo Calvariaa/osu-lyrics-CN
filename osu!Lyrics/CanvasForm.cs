@@ -28,6 +28,7 @@ namespace osu_Lyrics
 
         public CanvasForm()
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
             if (Constructor == null)
             {
                 Constructor = this;
@@ -36,13 +37,10 @@ namespace osu_Lyrics
 
             //Osu.MessageReceived += Osu_MessageReceived;
             // Invoke these
-            try
-            {
-                lyricManager.LyricChanged += (s, e) => Refresh();
-                lyricManager.PlaySpeedChanged += (s, e) => Refresh();
-                lyricManager.PlayTimeChanged += (s, e) => Refresh();
-                lyricManager.AudioChanged += (s, e) => Refresh();
-            } finally { }
+            lyricManager.LyricChanged += (s, e) => Refresh();
+            lyricManager.PlaySpeedChanged += (s, e) => Refresh();
+            lyricManager.PlayTimeChanged += (s, e) => Refresh();
+            lyricManager.AudioChanged += (s, e) => Refresh();
             Osu.KeyDown += Osu_KeyDown;
         }
 
