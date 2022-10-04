@@ -24,7 +24,7 @@ namespace osu_Lyrics.Lyrics
                 LyricChanged?.Invoke(null, null);
             }
         }
-        private string status = "선곡하세요";
+        private string status = "请选择";
 
         private static double Now => new TimeSpan(DateTime.Now.Ticks).TotalSeconds;
 
@@ -157,7 +157,7 @@ namespace osu_Lyrics.Lyrics
                 }
                 else if (result.IsFaulted)
                 {
-                    status = "가사 없음";
+                    status = "没有歌词";
                     lyric.Clear();
                 }
             });
@@ -199,11 +199,13 @@ namespace osu_Lyrics.Lyrics
             }
             else if (Settings.LineCount > 0)
             {
-                return (Lyric) lyric.Take(Settings.LineCount);
+                lyric.Take(Settings.LineCount);
+                return lyric;
             }
             else
             {
-                return (Lyric) lyric.Skip(Math.Max(0, lyric.Count + Settings.LineCount));
+                lyric.Skip(Math.Max(0, lyric.Count + Settings.LineCount));
+                return lyric;
             }
         }
     }

@@ -55,13 +55,13 @@
             // menuSetting
             // 
             this.menuSetting.Name = "menuSetting";
-            this.menuSetting.Text = "설정";
+            this.menuSetting.Text = "设置";
             this.menuSetting.Click += new System.EventHandler(this.menuSetting_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Text = "종료";
+            this.menuExit.Text = "退出";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
             // timer1

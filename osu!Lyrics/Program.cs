@@ -19,7 +19,7 @@ namespace osu_Lyrics
                 Osu.Show();
                 if (createdNew)
                 {
-                    // 업데이트 전의 파일 삭제
+                    // 删除更新前的文件
                     Task.Run(() => IO.FileEx.PostDel(Application.ExecutablePath + Constants._BakExt));
 
                     Osu.RunMessageServer();

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <RootNamespace>osu_Lyrics</RootNamespace>
   </PropertyGroup>
 
@@ -10,8 +10,8 @@
     <AssemblyTitle>osu!Lyrics</AssemblyTitle>
     <Company>https://github.com/sunghwan2789/osu-lyrics</Company>
     <Product>osu!Lyrics</Product>
-    <NeutralLanguage>ko-KR</NeutralLanguage>
-    <Description>가사가 궁금해</Description>
+    <NeutralLanguage>zh-CN</NeutralLanguage>
+    <Description>osu歌词显示</Description>
     <Copyright>BloodCat 2014-2020</Copyright>
     <Version>1.8.65</Version>
     <FileVersion>1.8.65</FileVersion>

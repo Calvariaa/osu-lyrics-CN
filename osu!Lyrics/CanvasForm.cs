@@ -36,10 +36,13 @@ namespace osu_Lyrics
 
             //Osu.MessageReceived += Osu_MessageReceived;
             // Invoke these
-            lyricManager.LyricChanged += (s, e) => Refresh();
-            lyricManager.PlaySpeedChanged += (s, e) => Refresh();
-            lyricManager.PlayTimeChanged += (s, e) => Refresh();
-            lyricManager.AudioChanged += (s, e) => Refresh();
+            try
+            {
+                lyricManager.LyricChanged += (s, e) => Refresh();
+                lyricManager.PlaySpeedChanged += (s, e) => Refresh();
+                lyricManager.PlayTimeChanged += (s, e) => Refresh();
+                lyricManager.AudioChanged += (s, e) => Refresh();
+            } finally { }
             Osu.KeyDown += Osu_KeyDown;
         }
 
@@ -66,7 +69,7 @@ namespace osu_Lyrics
 
         private async void Lyrics_Shown(object sender, EventArgs e)
         {
-            // 초기 설정을 위해 대화 상자 열기
+            // 打开对话框进行初始设置
             if (!File.Exists(Settings._Path))
             {
                 BeginInvoke(new MethodInvoker(menuSetting.PerformClick));
@@ -189,40 +192,40 @@ namespace osu_Lyrics
 
         private void Osu_KeyDown(object sender, KeyEventArgs e)
         {
-            // 설정 중이면 키보드 후킹 안 하기!
+            // 如果正在设置，则不挂起键盘！
             if (Settings?.Visible ?? false)
             {
                 return;
             }
 
-            // 매칭되는 핫키가 있다면 osu!로 키 전송 방지
+            // 如果有匹配的热键，osu！防止摇晃传播
             e.SuppressKeyPress = Settings.SuppressKey;
 
             if (e.KeyData == Settings.KeyToggle)
             {
                 showLyric = !showLyric;
-                Notice("가사 {0}", showLyric ? "보임" : "숨김");
+                Notice("歌词 {0}", showLyric ? "显示" : "隐藏");
                 return;
             }
 
-            // 가사 보임 상태에서만 처리하는 핫키들
+            // 只在看到歌词的情况下处理的热键。
             if (!Settings.BlockSyncOnHide || (Settings.BlockSyncOnHide && showLyric))
             {
                 if (e.KeyData == Settings.KeyBackward)
                 {
                     lyricManager.LyricSync += 0.5;
-                    Notice("싱크 느리게({0}초)", lyricManager.LyricSync.ToString("F1"));
+                    Notice("缓慢下沉({0}秒)", lyricManager.LyricSync.ToString("F1"));
                     return;
                 }
                 if (e.KeyData == Settings.KeyForward)
                 {
                     lyricManager.LyricSync -= 0.5;
-                    Notice("싱크 빠르게({0}초)", lyricManager.LyricSync.ToString("F1"));
+                    Notice("快速下沉({0}秒)", lyricManager.LyricSync.ToString("F1"));
                     return;
                 }
             }
 
-            // 매칭되는 핫키가 없으므로 osu!로 키 전송
+            // 没有匹配的热键，所以将热键发送给 osu！
             e.SuppressKeyPress = false;
         }
 
