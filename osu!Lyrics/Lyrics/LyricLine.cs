@@ -13,9 +13,13 @@ namespace osu_Lyrics.Lyrics
         {
             // [0:2.4]歌词@
             var lyric = data.Split(new[] { ']' }, 2);
+            if (Settings.IfRemoveKorean && System.Text.RegularExpressions.Regex.IsMatch(lyric[1], @"^[\uac00-\ud7ff]+"))
+                lyric[1] = string.Empty;
+
             var time = lyric[0].TrimStart('[').Split(':');
             Time = double.Parse(time[0]) * 60 + double.Parse(time[1]);
             Text = lyric.Length > 1 ? lyric[1].Trim() : string.Empty;
+            
         }
 
         public LyricLine(double time, string text)

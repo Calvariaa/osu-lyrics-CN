@@ -48,7 +48,7 @@ namespace osu_Lyrics.Interop
                     return Process;
                 }
 
-                MessageBox.Show("osu!가 설치되어있나요?");
+                MessageBox.Show("osu!安装了吗？");
                 Application.Exit();
                 return null;
             }

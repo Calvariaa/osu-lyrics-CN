@@ -70,6 +70,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -82,7 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 14);
+            this.label1.Location = new System.Drawing.Point(15, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 18);
             this.label1.TabIndex = 20;
@@ -90,7 +91,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(105, 10);
+            this.numericUpDown1.Location = new System.Drawing.Point(102, 54);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             63,
             0,
@@ -102,7 +103,7 @@
             0,
             -2147483648});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(54, 28);
+            this.numericUpDown1.Size = new System.Drawing.Size(88, 28);
             this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.UpdateSettings);
@@ -110,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 14);
+            this.label2.Location = new System.Drawing.Point(15, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
             this.label2.TabIndex = 0;
@@ -119,10 +120,10 @@
             // trackBar1
             // 
             this.trackBar1.LargeChange = 20;
-            this.trackBar1.Location = new System.Drawing.Point(306, 10);
+            this.trackBar1.Location = new System.Drawing.Point(204, 10);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(131, 45);
+            this.trackBar1.Size = new System.Drawing.Size(233, 45);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.TickFrequency = 0;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -141,7 +142,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 56);
+            this.label4.Location = new System.Drawing.Point(15, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 18);
             this.label4.TabIndex = 16;
@@ -155,7 +156,7 @@
             "上",
             "中",
             "下"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 50);
+            this.comboBox1.Location = new System.Drawing.Point(102, 94);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(88, 26);
             this.comboBox1.TabIndex = 2;
@@ -215,7 +216,7 @@
             "左",
             "中",
             "右"});
-            this.comboBox2.Location = new System.Drawing.Point(99, 90);
+            this.comboBox2.Location = new System.Drawing.Point(102, 134);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(88, 26);
             this.comboBox2.TabIndex = 4;
@@ -224,7 +225,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 94);
+            this.label7.Location = new System.Drawing.Point(15, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 18);
             this.label7.TabIndex = 12;
@@ -262,7 +263,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(348, 140);
+            this.label8.Location = new System.Drawing.Point(216, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 18);
             this.label8.TabIndex = 4;
@@ -270,14 +271,14 @@
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(416, 140);
+            this.numericUpDown4.Location = new System.Drawing.Point(397, 140);
             this.numericUpDown4.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(54, 28);
+            this.numericUpDown4.Size = new System.Drawing.Size(73, 28);
             this.numericUpDown4.TabIndex = 8;
             this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown4.Value = new decimal(new int[] {
@@ -455,7 +456,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Cursor = System.Windows.Forms.Cursors.Help;
-            this.label14.Location = new System.Drawing.Point(165, 12);
+            this.label14.Location = new System.Drawing.Point(193, 58);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 18);
             this.label14.TabIndex = 35;
@@ -497,7 +498,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(240, 328);
+            this.checkBox2.Location = new System.Drawing.Point(225, 328);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(135, 22);
             this.checkBox2.TabIndex = 42;
@@ -516,12 +517,25 @@
             this.checkBox3.Text = "仅在osu! 窗口处于活动状态时显示歌词";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox4.Location = new System.Drawing.Point(367, 328);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(99, 22);
+            this.checkBox4.TabIndex = 44;
+            this.checkBox4.Text = "屏蔽韩语";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(487, 471);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -620,5 +634,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }
