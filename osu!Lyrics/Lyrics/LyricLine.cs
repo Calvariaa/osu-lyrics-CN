@@ -11,7 +11,7 @@ namespace osu_Lyrics.Lyrics
 
         public LyricLine(string data)
         {
-            // [0:2.4]가사@
+            // [0:2.4]歌词@
             var lyric = data.Split(new[] { ']' }, 2);
             var time = lyric[0].TrimStart('[').Split(':');
             Time = double.Parse(time[0]) * 60 + double.Parse(time[1]);
